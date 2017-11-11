@@ -51,11 +51,11 @@ public class MemberDao {
         preparedStatement.execute();
     }
 
-    public void delMember(Member member) throws SQLException {
+    public void delMember(Integer id) throws SQLException {
         Connection conn = DBUtil.getConnection();
         String delSql = "delete from imooc.member where id = ?";
         PreparedStatement preparedStatement = conn.prepareStatement(delSql);
-        preparedStatement.setInt(1, member.getId());
+        preparedStatement.setInt(1, id);
         preparedStatement.execute();
     }
 
